@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ECommerceWebsite.Models.Admin>
+
+<div class="container full-height d-flex justify-content-start align-items-start">
+        <div class="row w-100">
+            <div class="col-md-6 mx-auto">
+                <div class="p-4">
+                  @foreach(var admin in Model){
+                    <form method="post" asp-action="Profile">
+                        <div>
+                            <div class="form-group pt-3">
+                                <label class="d-flex justify-content-start align-items-start" for="exampleInputPassword1">Name</label>
+                                <input asp-for="@admin.admin_id" type="hidden">
+                            </div>
+                        <div>
+                            <div class="form-group pt-3">
+                                <label class="d-flex justify-content-start align-items-start" for="exampleInputPassword1">Name</label>
+                                <input asp-for="@admin.admin_name" class="form-control">
+                            </div>
+                            <div>
+                                <label class="d-flex justify-content-start align-items-start" for="exampleInputEmail1">Email addresas</label>
+                                <input asp-for="@admin.admin_email" class="form-control">
+
+                            </div>
+
+                            <div class="form-group pt-3">
+                                <label class="d-flex justify-content-start align-items-start" for="exampleInputPassword1">Password</label>
+                                <input asp-for="@admin.admin_password" class="form-control">
+                            </div>
+                                <div class="form-group pt-3">
+                                    <label class="d-flex justify-content-start align-items-start" for="exampleInputPassword1">Password</label>
+                                    <input asp-for="@admin.admin_image" type="hidden" class="form-control">
+                                </div>
+                            <button type="submit" class="btn btn-primary">Update</button>
+                        </div>
+                    </form>
+                  }
+               
+            </div>
+        </div>
+    </div>
+    </div>
