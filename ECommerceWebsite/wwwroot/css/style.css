@@ -19419,14 +19419,13 @@ box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 
 input[type] {
-    /*  width: 100%;
-    padding: 12px 20px;*/
-    /*margin: 8px 0;*/
+  
     box-sizing: border-box;
     border: 1px solid #4627CC;
-    /*-webkit-transition: 0.5s;*/
-    /*transition: 0.5*/ /*s;
-    outline: none;*/
+   
+}
+#bordernone {
+    border: none;
 }
 label strong{
     color:black
