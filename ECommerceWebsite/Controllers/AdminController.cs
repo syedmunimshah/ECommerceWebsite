@@ -60,7 +60,7 @@ namespace ECommerceWebsite.Controllers
         public IActionResult Profile()
         {
             var adminId = HttpContext.Session.GetString("admin_session");
-            var row = _myContext.tbl_admin.FirstOrDefault(x => x.admin_id == int.Parse(adminId)); // Return a single object
+            var row = _myContext.tbl_admin.FirstOrDefault(x => x.admin_id == int.Parse(adminId)); 
             return View(row);
         }
 
@@ -79,35 +79,14 @@ namespace ECommerceWebsite.Controllers
         [HttpPost]
         public IActionResult ChangeProfileImage(IFormFile admin_image, Admin admin)
         {
-            if (admin_image == null || string.IsNullOrEmpty(admin_image.FileName))
-            {
-                // Handle the error appropriately
-                ViewBag.message = "Invalid image file.";
-                return View("Profile", admin); // Return to the profile view with the current admin data
-            }
-
-            string webRootPath = _env?.WebRootPath;
-            if (string.IsNullOrEmpty(webRootPath))
-            {
-                // Handle the error appropriately
-                ViewBag.message = "Web root path is not configured.";
-                return View("Profile", admin); // Return to the profile view with the current admin data
-            }
-
-            string imagePath = Path.Combine(webRootPath, "images", admin_image.FileName);
-            using (FileStream fs = new FileStream(imagePath, FileMode.Create))
-            {
-                admin_image.CopyTo(fs);
-            }
-
+            string ImagePath = Path.Combine(_env.WebRootPath,"images",admin_image.FileName);
+            FileStream fs = new FileStream(ImagePath,FileMode.Create);
+            admin_image.CopyTo(fs);
             admin.admin_image = admin_image.FileName;
             _myContext.tbl_admin.Update(admin);
             _myContext.SaveChanges();
-
             return RedirectToAction("Profile");
         }
-
-
 
 
     }
