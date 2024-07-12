@@ -88,6 +88,17 @@ namespace ECommerceWebsite.Controllers
             return RedirectToAction("Profile");
         }
 
+        [HttpGet]
+        public IActionResult getallCustomer()
+        {
+            return View(_myContext.tbl_customer.ToList());
+        }
+        [HttpGet]
+        public IActionResult Detail(int id)
+        {
+            var cus = _myContext.tbl_customer.FirstOrDefault(x => x.customer_id == id);
 
+            return View(cus);
+        }
     }
 }

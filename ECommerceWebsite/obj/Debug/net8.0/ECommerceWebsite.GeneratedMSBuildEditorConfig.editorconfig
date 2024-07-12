@@ -18,6 +18,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = F:\ECommerceWebsite\ECommerceWebsite\ECommerceWebsite
 build_property._RazorSourceGeneratorDebug = 
 
+[F:/ECommerceWebsite/ECommerceWebsite/ECommerceWebsite/Views/Admin/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[F:/ECommerceWebsite/ECommerceWebsite/ECommerceWebsite/Views/Admin/getallCustomer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cZ2V0YWxsQ3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/ECommerceWebsite/ECommerceWebsite/ECommerceWebsite/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

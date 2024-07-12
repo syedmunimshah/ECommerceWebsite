@@ -1,0 +1,59 @@
+﻿@model IEnumerable<ECommerceWebsite.Models.Customer>;
+
+<div class="container-fluid full-height d-flex justify-content-start align-items-start">
+    <div class="row w-100">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row" style="margin-left:150px;">
+                    <div class="col-md-12 col-10 mx-auto">
+
+                        <table class="table text-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Customer ID</th>
+                                    <th scope="col">Customer Name</th>
+                                    <th scope="col">Customer Email</th>
+                                    <th scope="col">Customer phone</th>
+                                    <th scope="col">Customer Country</th>
+                                    <th scope="col">Customer Gender</th>
+                                    <th scope="col">Option</th>
+
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach(var Cust in Model)
+                                {
+                                <tr>
+                                    <th scope="row">@Cust.customer_id</th>
+                                    <td>@Cust.customer_name</td>
+                                    <td>@Cust.customer_email</td>
+                                    <td>@Cust.customer_phone</td>
+                                    <td>@Cust.customer_country</td>
+                                    <td>@Cust.customer_gender</td>
+                                    <td class="d-flex">
+                                            <a asp-action="index" asp-controller="Admin" asp-route-id="@Cust.customer_id"  class="btn btn-primary" style="margin-right: 12px;"> update</a>
+                                            <a asp-action="Detail" asp-controller="Admin" asp-route-id="@Cust.customer_id" class="btn btn-warning text-white" style="margin-right: 12px;"> Detail</a>
+                                            <a asp-action="index" asp-controller="Admin" asp-route-id="@Cust.customer_id" class="btn btn-danger">Delete</a>
+
+                                            
+                                    </td>
+                                    
+
+                                </tr>
+                                }
+                                
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
