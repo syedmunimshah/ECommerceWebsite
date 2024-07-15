@@ -1,4 +1,5 @@
-﻿using ECommerceWebsite.Models;
+﻿using ECommerceWebsite.Migrations;
+using ECommerceWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ECommerceWebsite.Controllers
@@ -67,7 +68,7 @@ namespace ECommerceWebsite.Controllers
 
 
         [HttpPost]
-        public IActionResult Profile(Admin admin)
+        public IActionResult Profile(Models.Admin admin)
         {
             _myContext.tbl_admin.Update(admin);
             _myContext.SaveChanges();
@@ -77,7 +78,7 @@ namespace ECommerceWebsite.Controllers
 
 
         [HttpPost]
-        public IActionResult ChangeProfileImage(IFormFile admin_image, Admin admin)
+        public IActionResult ChangeProfileImage(IFormFile admin_image, Models.Admin admin)
         {
             string ImagePath = Path.Combine(_env.WebRootPath,"images",admin_image.FileName);
             FileStream fs = new FileStream(ImagePath,FileMode.Create);
@@ -94,11 +95,40 @@ namespace ECommerceWebsite.Controllers
             return View(_myContext.tbl_customer.ToList());
         }
         [HttpGet]
-        public IActionResult Detail(int id)
+        public IActionResult customerDetails(int id)
         {
             var cus = _myContext.tbl_customer.FirstOrDefault(x => x.customer_id == id);
 
             return View(cus);
         }
+        public IActionResult updatecustomer(int id)
+        {
+            var upda= _myContext.tbl_customer.Find(id);
+            return View(upda);
+        }
+        [HttpPost]
+        public IActionResult updatecustomer(Customer customer,IFormFile customer_img)
+        {
+            string ImagePath = Path.Combine(_env.WebRootPath, "Customer_images", customer_img.FileName);
+            FileStream fs = new FileStream(ImagePath, FileMode.Create);
+            customer_img.CopyTo(fs);
+            customer.customer_img = customer_img.FileName;
+            _myContext.tbl_customer.Update(customer);
+            _myContext.SaveChanges();
+            return RedirectToAction("getallCustomer");
+        }
+        public IActionResult deletecustomer(int id)
+        {
+            var customer=_myContext.tbl_customer.Find(id);
+            _myContext.tbl_customer.Remove(customer);
+            _myContext.SaveChanges();
+            return RedirectToAction("getallCustomer");
+        }
+        public IActionResult deletepermission(int id)
+        {
+            var dele = _myContext.tbl_customer.FirstOrDefault(x=>x.customer_id==id);
+            return View(dele);
+        }
+
     }
 }

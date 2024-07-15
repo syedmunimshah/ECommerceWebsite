@@ -32,9 +32,9 @@
                                     <td>@Cust.customer_country</td>
                                     <td>@Cust.customer_gender</td>
                                     <td class="d-flex">
-                                            <a asp-action="index" asp-controller="Admin" asp-route-id="@Cust.customer_id"  class="btn btn-primary" style="margin-right: 12px;"> update</a>
-                                            <a asp-action="Detail" asp-controller="Admin" asp-route-id="@Cust.customer_id" class="btn btn-warning text-white" style="margin-right: 12px;"> Detail</a>
-                                            <a asp-action="index" asp-controller="Admin" asp-route-id="@Cust.customer_id" class="btn btn-danger">Delete</a>
+                                            <a asp-action="updatecustomer" asp-controller="Admin" asp-route-id="@Cust.customer_id"  class="btn btn-primary" style="margin-right: 12px;"> update</a>
+                                            <a asp-action="customerDetails" asp-controller="Admin" asp-route-id="@Cust.customer_id" class="btn btn-warning text-white" style="margin-right: 12px;"> Detail</a>
+                                            <a asp-action="deletepermission" asp-controller="Admin" asp-route-id="@Cust.customer_id" class="btn btn-danger">Delete</a>
 
                                             
                                     </td>
