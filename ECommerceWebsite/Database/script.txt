@@ -132,3 +132,14 @@ CREATE TABLE [dbo].[tbl_product](
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
 GO
+
+
+
+
+
+use ECommerece
+
+select *from tbl_customer
+insert into tbl_customer values('Shah','shah@gmail.com','03158582321','shah123.comshah','India','Dehli','A 143','Male','shah.jpg')
+
+
