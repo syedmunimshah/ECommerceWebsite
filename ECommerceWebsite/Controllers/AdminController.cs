@@ -130,5 +130,49 @@ namespace ECommerceWebsite.Controllers
             return View(dele);
         }
 
+
+        public IActionResult fetchCategory()
+        {
+            return View(_myContext.tbl_categories.ToList());
+        }
+
+           public IActionResult addCategory()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult addCategory(Category cat)
+        {
+            _myContext.tbl_categories.Add(cat);
+            _myContext.SaveChanges();
+            return View();
+        }
+
+        public IActionResult updateCategory(int id)
+        {
+            var category=_myContext.tbl_categories.Find(id);
+            return View(category);
+        }
+        [HttpPost]
+        public IActionResult updateCategory(Category cat)
+        {
+            _myContext.tbl_categories.Update(cat);
+            _myContext.SaveChanges();
+            return View();
+        }
+        public IActionResult deletepermissionCategory(int id)
+        {
+            var dele = _myContext.tbl_categories.FirstOrDefault(x => x.category_id == id);
+            return View(dele);
+        }
+        public IActionResult deleteCategory(int id)
+        {
+            var category=_myContext.tbl_categories.Find(id);
+            _myContext.tbl_categories.Remove(category);
+            _myContext.SaveChanges();
+
+            return RedirectToAction("fetchCategory");
+        }
+
     }
 }
