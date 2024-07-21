@@ -145,7 +145,7 @@ namespace ECommerceWebsite.Controllers
         {
             _myContext.tbl_categories.Add(cat);
             _myContext.SaveChanges();
-            return View();
+            return RedirectToAction("fetchCategory");
         }
 
         public IActionResult updateCategory(int id)

@@ -83,8 +83,9 @@ namespace ECommerceWebsite.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("category_id"));
 
-                    b.Property<int>("category_name")
-                        .HasColumnType("int");
+                    b.Property<string>("category_name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("category_id");
 

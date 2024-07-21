@@ -6,7 +6,7 @@ namespace ECommerceWebsite.Models
     {
         [Key]
         public int category_id { get; set; }
-        public int category_name { get; set; }
+        public string category_name { get; set; }
         public List<Product> Product { get; set; }
 
     }
