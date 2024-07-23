@@ -158,7 +158,7 @@ namespace ECommerceWebsite.Controllers
         {
             _myContext.tbl_categories.Update(cat);
             _myContext.SaveChanges();
-            return View();
+            return RedirectToAction("fetchCategory");
         }
         public IActionResult deletepermissionCategory(int id)
         {
@@ -174,5 +174,21 @@ namespace ECommerceWebsite.Controllers
             return RedirectToAction("fetchCategory");
         }
 
+        public IActionResult FetchAllProduct()
+        {
+            return View(_myContext.tbl_product.ToList());
+            
+        }
+        public IActionResult addProduct() {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult addProduct(Product product)
+        {
+            _myContext.tbl_product.Add(product);
+            _myContext.SaveChanges();
+
+            return RedirectToAction("FetchAllProduct");
+        }
     }
 }

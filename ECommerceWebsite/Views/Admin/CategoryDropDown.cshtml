@@ -1,0 +1,7 @@
+﻿@model IEnumerable<ECommerceWebsite.Models.Category>
+<select>
+    @foreach(var Cat in Model)
+    {
+          <option value="@Cat.category_id" >@Cat.category_name</option>
+  }
+</select>
