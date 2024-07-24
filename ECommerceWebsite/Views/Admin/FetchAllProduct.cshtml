@@ -7,13 +7,14 @@
                         <div class="col-md-12 col-10 mx-auto">
 
                             <table class="table text-dark">
-                                <a asp-action="addProduct" asp-controller="admin" class="btn btn-primary text-white" style="display: flex; justify-content: center; width: 130px; margin-left: 121px; margin-top: 10px;margin-bottom:10px"> Add Product</a>
+                            <a asp-action="addProduct" asp-controller="admin" class="btn btn-primary text-white" style="display: flex; justify-content: center; width: 130px; margin-left: 121px; margin-top: 10px;margin-bottom:10px"> Add Product</a>
                                 <thead>
                                     <tr>
 
                                         <th scope="col">Product Name</th>
                                         <th scope="col">Product Price</th>
                                         <th scope="col">Product Description</th>
+                                        <th scope="col">Product Image</th>
                                         <th scope="col">Option</th>
 
 
@@ -24,10 +25,12 @@
                                     {
                                         <tr>
 
-                                            <td>@Cat.product_name</td>
+                                        <th scope="row">@Cat.product_name</th>
                                             <th scope="row">@Cat.product_price</th>
                                             <th scope="row">@Cat.product_description</th>
-
+                                        <th scope="row">
+                                            <img src="@("~/Product_images/"+Cat.product_image)" asp-append-version="true" alt="Product Image" style="height:50px;width:50px" />
+                                        </th>
                                             <td class="d-flex">
                                                 <a asp-action="productupdate" asp-controller="Admin" asp-route-id="@Cat.product_id" class="btn btn-primary" style="margin-right: 12px;"> update</a>
                                                 <a asp-action="productDetails" asp-controller="Admin" asp-route-id="@Cat.product_id" class="btn btn-warning text-white" style="margin-right: 12px;"> Detail</a>

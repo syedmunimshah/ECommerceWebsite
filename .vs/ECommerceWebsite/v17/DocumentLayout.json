@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\Code\\ECommerceWebsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|d:\\code\\ecommercewebsite\\ecommercewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|d:\\code\\ecommercewebsite\\ecommercewebsite\\views\\admin\\fetchallproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\views\\admin\\fetchallproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|D:\\Code\\ECommerceWebsite\\ecommercewebsite\\views\\admin\\updatecategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\views\\admin\\updatecategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|d:\\code\\ecommercewebsite\\ecommercewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +18,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "updateCategory.cshtml",
-              "DocumentMoniker": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\updateCategory.cshtml",
-              "RelativeDocumentMoniker": "ECommerceWebsite\\Views\\Admin\\updateCategory.cshtml",
-              "ToolTip": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\updateCategory.cshtml",
-              "RelativeToolTip": "ECommerceWebsite\\Views\\Admin\\updateCategory.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAABBAAAA",
+              "DocumentIndex": 0,
+              "Title": "FetchAllProduct.cshtml",
+              "DocumentMoniker": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\FetchAllProduct.cshtml",
+              "RelativeDocumentMoniker": "ECommerceWebsite\\Views\\Admin\\FetchAllProduct.cshtml",
+              "ToolTip": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\FetchAllProduct.cshtml",
+              "RelativeToolTip": "ECommerceWebsite\\Views\\Admin\\FetchAllProduct.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABsAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-21T13:05:58.888Z",
+              "WhenOpened": "2024-07-24T21:27:57.611Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "ECommerceWebsite\\Controllers\\AdminController.cs",
               "ToolTip": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Controllers\\AdminController.cs",
               "RelativeToolTip": "ECommerceWebsite\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAAJMAAAAAAAAAAAAowJYAAAArAAAA",
+              "ViewState": "AQIAALcAAAAAAAAAAAAqwL0AAABNAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-20T12:22:20.009Z",
               "EditorCaption": ""

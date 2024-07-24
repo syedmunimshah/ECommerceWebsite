@@ -180,11 +180,18 @@ namespace ECommerceWebsite.Controllers
             
         }
         public IActionResult addProduct() {
+            List<Category> categories = _myContext.tbl_categories.ToList();
+            ViewData["category"] = categories;
             return View();
         }
         [HttpPost]
-        public IActionResult addProduct(Product product)
+        public IActionResult addProduct(Product product,IFormFile product_image)
         {
+            string ImagePath = Path.Combine(_env.WebRootPath, "Product_images", product_image.FileName);
+            FileStream fs = new FileStream(ImagePath, FileMode.Create);
+            product_image.CopyTo(fs);
+            product.product_image = product_image.FileName;
+
             _myContext.tbl_product.Add(product);
             _myContext.SaveChanges();
 
