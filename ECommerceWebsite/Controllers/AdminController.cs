@@ -197,5 +197,18 @@ namespace ECommerceWebsite.Controllers
 
             return RedirectToAction("FetchAllProduct");
         }
+        public IActionResult productupdate(int id)
+        {
+            var product = _myContext.tbl_product.Find(id);
+            return View(product);
+        }
+        public IActionResult productDetails(int id)
+        {
+            return View();
+        }
+        public IActionResult productdeletepermission(int id)
+        {
+            return View();
+        }
     }
 }
