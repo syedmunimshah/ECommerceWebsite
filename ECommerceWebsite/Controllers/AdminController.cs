@@ -1,6 +1,7 @@
 ﻿using ECommerceWebsite.Migrations;
 using ECommerceWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceWebsite.Controllers
 {
@@ -197,18 +198,38 @@ namespace ECommerceWebsite.Controllers
 
             return RedirectToAction("FetchAllProduct");
         }
-        public IActionResult productupdate(int id)
-        {
-            var product = _myContext.tbl_product.Find(id);
-            return View(product);
-        }
+      
         public IActionResult productDetails(int id)
         {
-            return View();
+            var product = _myContext.tbl_product.Include(p=>p.Category).FirstOrDefault(p=>p.product_id==id);
+            return View(product);
         }
+    
         public IActionResult productdeletepermission(int id)
         {
-            return View();
+            var dele = _myContext.tbl_product.FirstOrDefault(x => x.product_id == id);
+            return View(dele);
+        }
+        public IActionResult deleteproduct(int id)
+        {
+            var category = _myContext.tbl_product.Find(id);
+            _myContext.tbl_product.Remove(category);
+            _myContext.SaveChanges();
+
+            return RedirectToAction("FetchAllProduct");
+        }
+        public IActionResult productupdate(int id)
+        {
+            var product = _myContext.tbl_product.Include(p=>p.Category).FirstOrDefault(p=>p.product_id==id);
+            return View(product);
+        }
+       
+        [HttpPost]
+        public IActionResult productupdate(Product product)
+        {
+            _myContext.tbl_product.Update(product);
+            _myContext.SaveChanges();
+            return RedirectToAction("FetchAllProduct");
         }
     }
 }

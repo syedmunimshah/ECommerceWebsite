@@ -13,7 +13,7 @@
 
                                         <th scope="col">Product Name</th>
                                         <th scope="col">Product Price</th>
-                                        <th scope="col">Product Description</th>
+                                        
                                         <th scope="col">Product Image</th>
                                         <th scope="col">Option</th>
 
@@ -27,7 +27,7 @@
 
                                         <th scope="row">@Cat.product_name</th>
                                             <th scope="row">@Cat.product_price</th>
-                                            <th scope="row">@Cat.product_description</th>
+                                            @* <th scope="row">@Cat.product_description</th> *@
                                         <th scope="row">
                                             <img src="@("~/Product_images/"+Cat.product_image)" asp-append-version="true" alt="Product Image" style="height:50px;width:50px" />
                                         </th>

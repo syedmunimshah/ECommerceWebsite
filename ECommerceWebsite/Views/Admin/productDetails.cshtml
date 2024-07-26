@@ -1,0 +1,56 @@
+﻿@model ECommerceWebsite.Models.Product;
+
+<div class="container-fluid full-height d-flex justify-content-start align-items-start">
+    <div class="row w-100">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row" style="margin-left:150px;">
+                    <div class="col-md-12 col-10 mx-auto">
+                        <h4 class="mt-3 mb-3">
+                            Product Details <h4 />
+                            <img src="@("~/Product_images/"+Model.product_image)" asp-append-version=true style="width:250px;height:250px;" />
+                            <table class="table text-dark mb-5">
+
+                                <tbody>
+
+                                    <tr>
+                                        <th scope="col">Product ID</th>
+                                        <td>@Model.product_id</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Product Name</th>
+                                        <td>@Model.product_name</td>
+
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Product Price</th>
+                                        <td>@Model.product_price</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Product Description</th>
+                                        <td>@Model.product_description</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Product Category</th>
+                                        <td>@Model.Category.category_name</td>
+                                    </tr>
+                                
+                                 
+
+
+                                </tbody>
+                            </table>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
