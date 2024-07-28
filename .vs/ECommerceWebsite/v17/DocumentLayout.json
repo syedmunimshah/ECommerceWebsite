@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "D:\\Code\\ECommerceWebsite\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|d:\\code\\ecommercewebsite\\ecommercewebsite\\views\\admin\\fetchallproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\views\\admin\\fetchallproduct.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|D:\\Code\\ECommerceWebsite\\ecommercewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|d:\\code\\ecommercewebsite\\ecommercewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|d:\\code\\ecommercewebsite\\ecommercewebsite\\views\\admin\\categorydropdown.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\views\\admin\\categorydropdown.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|d:\\code\\ecommercewebsite\\ecommercewebsite\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|d:\\code\\ecommercewebsite\\ecommercewebsite\\views\\admin\\productupdate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAB599A0-099E-43DB-8B06-C8CD1D275656}|ECommerceWebsite\\ECommerceWebsite.csproj|solutionrelative:ecommercewebsite\\views\\admin\\productupdate.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,30 +26,56 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FetchAllProduct.cshtml",
-              "DocumentMoniker": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\FetchAllProduct.cshtml",
-              "RelativeDocumentMoniker": "ECommerceWebsite\\Views\\Admin\\FetchAllProduct.cshtml",
-              "ToolTip": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\FetchAllProduct.cshtml",
-              "RelativeToolTip": "ECommerceWebsite\\Views\\Admin\\FetchAllProduct.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAABsAAAA5AAAA",
+              "DocumentIndex": 3,
+              "Title": "productupdate.cshtml",
+              "DocumentMoniker": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\productupdate.cshtml",
+              "RelativeDocumentMoniker": "ECommerceWebsite\\Views\\Admin\\productupdate.cshtml",
+              "ToolTip": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\productupdate.cshtml",
+              "RelativeToolTip": "ECommerceWebsite\\Views\\Admin\\productupdate.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-07-24T21:27:57.611Z",
+              "WhenOpened": "2024-07-27T22:31:49.837Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CategoryDropDown.cshtml",
+              "DocumentMoniker": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\CategoryDropDown.cshtml",
+              "RelativeDocumentMoniker": "ECommerceWebsite\\Views\\Admin\\CategoryDropDown.cshtml",
+              "ToolTip": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Views\\Admin\\CategoryDropDown.cshtml",
+              "RelativeToolTip": "ECommerceWebsite\\Views\\Admin\\CategoryDropDown.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-27T20:36:55.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Category.cs",
+              "DocumentMoniker": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "ECommerceWebsite\\Models\\Category.cs",
+              "ToolTip": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Models\\Category.cs",
+              "RelativeToolTip": "ECommerceWebsite\\Models\\Category.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-27T19:23:36.103Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AdminController.cs",
               "DocumentMoniker": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Controllers\\AdminController.cs",
               "RelativeDocumentMoniker": "ECommerceWebsite\\Controllers\\AdminController.cs",
               "ToolTip": "D:\\Code\\ECommerceWebsite\\ECommerceWebsite\\Controllers\\AdminController.cs",
               "RelativeToolTip": "ECommerceWebsite\\Controllers\\AdminController.cs",
-              "ViewState": "AQIAALcAAAAAAAAAAAAqwL0AAABNAAAA",
+              "ViewState": "AQIAANcAAAAAAAAAAAASwOQAAAAHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-07-20T12:22:20.009Z",
               "EditorCaption": ""

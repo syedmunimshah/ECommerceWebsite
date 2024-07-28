@@ -1,11 +1,12 @@
 ﻿@model IEnumerable<ECommerceWebsite.Models.Category>
-<select name="cat_id" class="form-select" aria-label="Default select example">
+<select name="cat_id" class="form-select d-flex">
     <option hidden>Select Category</option>
     @foreach (var Cat in Model)
     {
-        
-        <option value="@Cat.category_id">@Cat.category_name</option>
-       
+
+        <option value="@Cat.category_id"
+                selected="@Cat.category_id==ViewBag.selectedCategoryId">@Cat.category_name</option>
+
     }
-    
-</select>
+
+</select> 

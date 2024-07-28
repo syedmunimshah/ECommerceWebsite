@@ -220,13 +220,20 @@ namespace ECommerceWebsite.Controllers
         }
         public IActionResult productupdate(int id)
         {
-            var product = _myContext.tbl_product.Include(p=>p.Category).FirstOrDefault(p=>p.product_id==id);
+            List<Category> categories = _myContext.tbl_categories.ToList();
+            ViewData["category"] = categories;
+            var product = _myContext.tbl_product.Find(id);
+            ViewBag.selectedCategoryId = product.cat_id;
             return View(product);
         }
        
         [HttpPost]
-        public IActionResult productupdate(Product product)
+        public IActionResult productupdate(Product product,IFormFile product_image)
         {
+            string ImagePath = Path.Combine(_env.WebRootPath, "Product_images", product_image.FileName);
+            FileStream fs = new FileStream(ImagePath, FileMode.Create);
+            product_image.CopyTo(fs);
+            product.product_image = product_image.FileName;
             _myContext.tbl_product.Update(product);
             _myContext.SaveChanges();
             return RedirectToAction("FetchAllProduct");
