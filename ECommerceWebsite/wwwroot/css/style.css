@@ -8063,8 +8063,9 @@ a {
   background-color: #343957;
   transition: all .2s ease;
   z-index: 4; }
-  .nav-header .logo-abbr {
-    max-width: 30px; }
+    .nav-header .logo-abbr {
+        max-width: 70px;
+    }
   .nav-header .logo-compact {
     display: none; }
   @media only screen and (min-width: 1800px) {
@@ -8094,9 +8095,10 @@ a {
         padding-left: 0;
         padding-right: 0;
         justify-content: center; } }
-  .nav-header .brand-title {
-    margin-left: 15px;
-    max-width: 75px; }
+.nav-header .brand-title {
+    margin-left: 0px;
+    max-width: 171px;
+}
     [data-theme-version="dark"] .nav-header .brand-title {
       background-position: 0 120%; }
 

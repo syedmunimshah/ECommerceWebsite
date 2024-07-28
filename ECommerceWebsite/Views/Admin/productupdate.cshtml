@@ -33,8 +33,8 @@
                           
                         </div>
                         <div class="col-md-6 col-10 mx-auto pt-5 mt-1">
-                            <div class="form-group pt-3 d-flex">
-                                <input id="bordernone" type="file" asp-for="product_image" />
+                            <div class="form-group pt-3 d-flex" style="justify-content: center;align-items: center;flex-direction: column;">
+                                <input id="bordernone" type="file" asp-for="product_image" style="margin-left: 20px;"/>
                                 <img class="mt-4 mb-3" src="@("/Product_images/" + Model.product_image)" asp-append-version="true" style="width:250px;height:250px;" />
                             </div>
                         </div>
