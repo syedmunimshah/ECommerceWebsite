@@ -1,6 +1,7 @@
 ﻿using ECommerceWebsite.Migrations;
 using ECommerceWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
 namespace ECommerceWebsite.Controllers
@@ -181,22 +182,22 @@ namespace ECommerceWebsite.Controllers
             
         }
         public IActionResult addProduct() {
-            List<Category> categories = _myContext.tbl_categories.ToList();
-            ViewData["category"] = categories;
+
+            ViewBag.category = new SelectList(_myContext.tbl_categories, "category_id", "category_name");
             return View();
         }
         [HttpPost]
         public IActionResult addProduct(Product product,IFormFile product_image)
         {
-            string ImagePath = Path.Combine(_env.WebRootPath, "Product_images", product_image.FileName);
-            FileStream fs = new FileStream(ImagePath, FileMode.Create);
-            product_image.CopyTo(fs);
-            product.product_image = product_image.FileName;
+           
+                string imagePath = Path.Combine(_env.WebRootPath, "Product_images", product_image.FileName);
+                FileStream fs = new FileStream(imagePath, FileMode.Create);
+                product_image.CopyTo(fs);
+                product.product_image = product_image.FileName;
 
-            _myContext.tbl_product.Add(product);
-            _myContext.SaveChanges();
-
-            return RedirectToAction("FetchAllProduct");
+                _myContext.tbl_product.Add(product);
+                _myContext.SaveChanges();
+                return RedirectToAction("FetchAllProduct");
         }
       
         public IActionResult productDetails(int id)
@@ -220,8 +221,8 @@ namespace ECommerceWebsite.Controllers
         }
         public IActionResult productupdate(int id)
         {
-            List<Category> categories = _myContext.tbl_categories.ToList();
-            ViewData["category"] = categories;
+           
+            ViewBag.category = new SelectList(_myContext.tbl_categories, "category_id", "category_name");
             var product = _myContext.tbl_product.Find(id);
             ViewBag.selectedCategoryId = product.cat_id;
             return View(product);
