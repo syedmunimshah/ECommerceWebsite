@@ -183,7 +183,7 @@ namespace ECommerceWebsite.Controllers
         }
         public IActionResult addProduct() {
 
-            ViewBag.category = new SelectList(_myContext.tbl_categories, "category_id", "category_name");
+            ViewBag.cat = new SelectList(_myContext.tbl_categories, "category_id", "category_name");
             return View();
         }
         [HttpPost]
@@ -222,7 +222,7 @@ namespace ECommerceWebsite.Controllers
         public IActionResult productupdate(int id)
         {
            
-            ViewBag.category = new SelectList(_myContext.tbl_categories, "category_id", "category_name");
+            ViewBag.cat = new SelectList(_myContext.tbl_categories, "category_id", "category_name");
             var product = _myContext.tbl_product.Find(id);
             ViewBag.selectedCategoryId = product.cat_id;
             return View(product);
