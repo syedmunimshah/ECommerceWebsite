@@ -5,6 +5,7 @@
 }
 <!-- Navbar Start -->
 
+
 <div class="container-fluid mb-5">
     <div class="row border-top px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
@@ -41,8 +42,15 @@
                         <a href="contact.html" class="nav-item nav-link">COUNTACT US</a>
                     </div>
                     <div class="navbar-nav ml-auto py-0">
-                        <a asp-action="CustomerLogin" asp-controller="Customer" class="nav-item nav-link">Login</a>
-                        <a asp-action="CustomerRegister" asp-controller="Customer" class="nav-item nav-link">Register</a>
+                        @if (string.IsNullOrEmpty(ViewBag.checkSession))
+                        {
+                            <a asp-action="CustomerLogin" asp-controller="Customer" class="nav-item nav-link">Login</a>
+                            <a asp-action="CustomerRegister" asp-controller="Customer" class="nav-item nav-link">Register</a>
+                        }
+                        else
+                        {
+                            <a asp-action="CustomerLogout" asp-controller="Customer" class="nav-item nav-link">Login</a>
+                        }
                     </div>
                 </div>
             </nav>

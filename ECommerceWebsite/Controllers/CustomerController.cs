@@ -15,6 +15,7 @@ namespace ECommerceWebsite.Controllers
         {
             List <Category> categories= _myContext.tbl_categories.ToList();
             ViewBag.cat=categories;
+            ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
             return View();
         }
         public IActionResult CustomerLogin()
@@ -25,9 +26,18 @@ namespace ECommerceWebsite.Controllers
         [HttpPost]
         public IActionResult CustomerLogin(string customer_email,string customer_password)
         {
-            _myContext.tbl_customer.FirstOrDefault(x=>x.customer_email==customer_email && x.customer_password==customer_password);
-           
-            return View();
+            var row  = _myContext.tbl_customer.FirstOrDefault(x=>x.customer_email==customer_email && x.customer_password==customer_password);
+            if (row != null)
+            {
+                HttpContext.Session.SetString("Customersession", row.customer_id.ToString());
+                return RedirectToAction("Index");
+            }
+            else 
+            {
+                ViewBag.message = "Incorrect User  Or Password";
+                return View();
+            }
+
         }
         public IActionResult CustomerRegister()
         {
