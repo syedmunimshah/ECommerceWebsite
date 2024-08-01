@@ -1,15 +1,18 @@
 ﻿using ECommerceWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 
 namespace ECommerceWebsite.Controllers
 {
     public class CustomerController : Controller
     {
         private readonly myContext _myContext;
+        private readonly IWebHostEnvironment _env;
 
-        public CustomerController(myContext myContext)
+        public CustomerController(myContext myContext, IWebHostEnvironment env)
         {
             _myContext = myContext;
+            _env = env;
         }
         public IActionResult Index()
         {
@@ -51,6 +54,56 @@ namespace ECommerceWebsite.Controllers
             _myContext.SaveChanges();
             return RedirectToAction("CustomerLogin");
           
+        }
+        
+       public IActionResult CustomerLogout()
+        {
+            HttpContext.Session.Remove("Customersession");
+
+            return RedirectToAction("Index");
+        }
+        public IActionResult CustomerProfile()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Customersession")))
+                {
+                  return RedirectToAction("CustomerLogin");
+            }
+            else
+            {
+                List<Category> categories = _myContext.tbl_categories.ToList();
+                ViewBag.cat = categories;
+                var CustomerId = HttpContext.Session.GetString("Customersession");
+                var row = _myContext.tbl_customer.FirstOrDefault(x=>x.customer_id==int.Parse(CustomerId));
+                return View(row);
+            }
+        
+        }
+        [HttpPost]
+        public IActionResult CustomerProfile(Customer customer,IFormFile customer_img)
+        {
+
+
+            List<Category> categories = _myContext.tbl_categories.ToList();
+            ViewBag.cat = categories;
+            var CustomerId = HttpContext.Session.GetString("Customersession");
+
+            if (CustomerId == null)
+            {
+                return RedirectToAction("CustomerLogin");
+            }
+
+            string ImagePath = Path.Combine(_env.WebRootPath, "Customer_images", customer_img.FileName);
+            FileStream fs = new FileStream(ImagePath, FileMode.Create);
+            customer_img.CopyTo(fs);
+            customer.customer_img = customer_img.FileName;
+
+            customer.customer_id = int.Parse(CustomerId);  
+            _myContext.tbl_customer.Update(customer);
+            _myContext.SaveChanges();
+
+            return View(customer);
+
+
         }
     }
 }

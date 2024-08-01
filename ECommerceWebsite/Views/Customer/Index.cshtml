@@ -6,7 +6,7 @@
 <!-- Navbar Start -->
 
 
-<div class="container-fluid mb-5">
+<div class="container-fluid">
     <div class="row border-top px-xl-5">
         <div class="col-lg-3 d-none d-lg-block">
             <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100" data-toggle="collapse" href="#navbar-vertical" style="height: 65px; margin-top: -1px; padding: 0 30px;">
@@ -28,31 +28,7 @@
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                    <div class="navbar-nav mr-auto py-0">
-                        <a href="index.html" class="nav-item nav-link active">HOME</a>
-                        <a href="shop.html" class="nav-item nav-link">ABOUT US</a>
-                        <a href="detail.html" class="nav-item nav-link">PRODUCT</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">CATEGORY</a>
-                            <div class="dropdown-menu rounded-0 m-0">
-                                <partial name="fetchCategoryList" model="ViewBag.cat" />
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">COUNTACT US</a>
-                    </div>
-                    <div class="navbar-nav ml-auto py-0">
-                        @if (string.IsNullOrEmpty(ViewBag.checkSession))
-                        {
-                            <a asp-action="CustomerLogin" asp-controller="Customer" class="nav-item nav-link">Login</a>
-                            <a asp-action="CustomerRegister" asp-controller="Customer" class="nav-item nav-link">Register</a>
-                        }
-                        else
-                        {
-                            <a asp-action="CustomerLogout" asp-controller="Customer" class="nav-item nav-link">Login</a>
-                        }
-                    </div>
-                </div>
+              
             </nav>
             <div id="header-carousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -89,12 +65,13 @@
                 </a>
             </div>
         </div>
+   
     </div>
 </div>
 <!-- Navbar End -->
 <!-- Featured Start -->
-<div class="container-fluid pt-5">
-    <div class="row px-xl-5 pb-3">
+<div class="container-fluid">
+    <div class="row px-xl-5">
         <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
             <div class="d-flex align-items-center border mb-4" style="padding: 30px;">
                 <h1 class="fa fa-check text-primary m-0 mr-3"></h1>
