@@ -72,6 +72,7 @@ namespace ECommerceWebsite.Controllers
             {
                 List<Category> categories = _myContext.tbl_categories.ToList();
                 ViewBag.cat = categories;
+                ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
                 var CustomerId = HttpContext.Session.GetString("Customersession");
                 var row = _myContext.tbl_customer.FirstOrDefault(x=>x.customer_id==int.Parse(CustomerId));
                 return View(row);
@@ -104,6 +105,25 @@ namespace ECommerceWebsite.Controllers
             return View(customer);
 
 
+        }
+
+
+        public IActionResult feedback()
+        {
+            List<Category> categories = _myContext.tbl_categories.ToList();
+            ViewBag.cat = categories;
+            ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
+            return View();
+        }
+        [HttpPost]
+        public IActionResult feedback(Feedback feedback)
+        {
+            List<Category> categories = _myContext.tbl_categories.ToList();
+            ViewBag.cat = categories;
+            _myContext.tbl_feedback.Add(feedback);
+            _myContext.SaveChanges();
+             ViewBag.feedback = "Thanks Your Feedback";
+            return View();
         }
     }
 }

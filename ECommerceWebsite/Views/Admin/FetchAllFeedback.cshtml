@@ -1,0 +1,52 @@
+﻿﻿
+@model IEnumerable<ECommerceWebsite.Models.Feedback>
+    <div class="container-fluid full-height d-flex justify-content-start align-items-start">
+        <div class="row w-100">
+            <div class="col-md-12">
+                <div class="container">
+                    <div class="row" style="margin-left:150px;">
+                        <div class="col-md-12 col-10 mx-auto">
+                            <table class="table text-dark">
+                             <thead>
+                                    <tr>
+                                    <th scope="col">Feedback Name</th>
+                                    <th scope="col">Feedback Message</th>
+                                    <th scope="col">Option</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var Cat in Model)
+                                    {
+                                        <tr>
+
+                                        <th scope="row">@Cat.feedback_name</th>
+                                            <th scope="row">@Cat.feedback_message</th>
+                                           
+                                        <th scope="row">  
+                                        </th>
+                                            <td class="d-flex">
+
+
+                                            <a asp-action="feedbackdeletepermission" asp-controller="Admin" asp-route-id="@Cat.feedback_id" class="btn btn-danger">Delete</a>
+
+                                            </td>
+
+
+                                        </tr>
+                                    }
+
+
+
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+

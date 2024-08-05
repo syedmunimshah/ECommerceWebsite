@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "feedback";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model ECommerceWebsite.Models.Feedback
+
+<div class="container">
+    <h3 class="mt-5 mb-5"> Feedback</h3>
+  <div class="row">
+        <div class="col-4 p-5" style="background-color: #d19c977d; border-radius: 10px;">
+            <form method="post" asp-action="feedback" asp-controller="Customer">
+                <div class="form-group">
+                    <label asp-for="feedback_name">Name</label>
+                    <input asp-for="feedback_name" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+                </div>
+
+
+                <div class="form-group">
+                    <label asp-for="feedback_message">Textarea</label>
+                    <textarea asp-for="feedback_message" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+                <div class="d-flex justify-content-center align-items-center mt-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+            <div class="d-flex justify-content-center align-items-center mt-3">
+                <div class="text-success p-3" >@ViewBag.feedback </div>
+            </div>
+      </div>
+        <div class="col-6">
+            <iframe style="border-radius: 10px;" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d28968.31814265157!2d67.08264960000001!3d24.8283136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2s!4v1722851224262!5m2!1sen!2s" width="750" height="430" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+  </div>
+   
+</div>
+

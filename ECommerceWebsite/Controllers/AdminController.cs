@@ -239,5 +239,26 @@ namespace ECommerceWebsite.Controllers
             _myContext.SaveChanges();
             return RedirectToAction("FetchAllProduct");
         }
+
+        public IActionResult FetchAllFeedback()
+        {
+            var feedback = _myContext.tbl_feedback.ToList();
+            return View(feedback);
+
+        }
+        public IActionResult feedbackdeletepermission(int id)
+        {
+            var dele = _myContext.tbl_feedback.FirstOrDefault(x => x.feedback_id == id);
+            return View(dele);
+        }
+        public IActionResult deletefeedback(int id)
+        {
+            var feedback = _myContext.tbl_feedback.Find(id);
+            _myContext.tbl_feedback.Remove(feedback);
+            _myContext.SaveChanges();
+
+            return RedirectToAction("FetchAllFeedback");
+        }
     }
+    
 }
