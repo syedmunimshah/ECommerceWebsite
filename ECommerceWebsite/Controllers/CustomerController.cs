@@ -18,6 +18,8 @@ namespace ECommerceWebsite.Controllers
         {
             List <Category> categories= _myContext.tbl_categories.ToList();
             ViewBag.cat=categories;
+            List <Product> product=_myContext.tbl_product.ToList();
+            ViewBag.pro = product;
             ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
             return View();
         }
@@ -110,10 +112,17 @@ namespace ECommerceWebsite.Controllers
 
         public IActionResult feedback()
         {
-            List<Category> categories = _myContext.tbl_categories.ToList();
-            ViewBag.cat = categories;
-            ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
-            return View();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Customersession")))
+            {
+                return RedirectToAction("CustomerLogin");
+            }
+            else
+            {
+                List<Category> categories = _myContext.tbl_categories.ToList();
+                ViewBag.cat = categories;
+                ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
+                return View();
+            }
         }
         [HttpPost]
         public IActionResult feedback(Feedback feedback)
@@ -125,5 +134,7 @@ namespace ECommerceWebsite.Controllers
              ViewBag.feedback = "Thanks Your Feedback";
             return View();
         }
+
+
     }
 }
