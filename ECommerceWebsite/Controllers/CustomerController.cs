@@ -134,7 +134,39 @@ namespace ECommerceWebsite.Controllers
              ViewBag.feedback = "Thanks Your Feedback";
             return View();
         }
+        //fetchAllProduct
+        public IActionResult ProductPage()
+        {
+            List<Category> categories = _myContext.tbl_categories.ToList();
+            ViewBag.cat = categories;
+            List<Product> product = _myContext.tbl_product.ToList();
+            ViewBag.pro = product; 
+            return View();
+        }
+        public IActionResult productDetails(int id)
+        {
+            List<Category> categories = _myContext.tbl_categories.ToList();
+            ViewBag.cat = categories;
+            var prod = _myContext.tbl_product.Where(x=>x.product_id==id).ToList();
+            return View(prod);
+        }
 
-
+        public IActionResult AddToCart(int product_id, Cart cart)
+        { string login = HttpContext.Session.GetString("Customersession");
+           
+            if (login!=null) {
+                var prod_id = _myContext.tbl_product.FirstOrDefault(x => x.product_id == product_id);
+                cart.prod_id = prod_id;
+                cart.cust_id = int.Parse(login);
+                cart.cart_quantity = 1;
+                cart.cart_status = 0;
+                _myContext.tbl_cart.Add(cart);
+                _myContext.SaveChanges();
+                TempData["message"] = "Product Successfully Added in Cart";
+                return RedirectToAction("ProductPage");
+            }
+            else { return RedirectToAction("CustomerLogin"); }
+           
+        }
     }
 }

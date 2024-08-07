@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewData["Title"] = "productDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model IEnumerable<ECommerceWebsite.Models.Product> 
+<h1 class="text-center my-4">Product Details</h1>
+<div class="container">
+    <div class="row d-flex justify-content-center align-items-center">
+    @foreach (var pro in Model)
+    {
+        <div class="col-4">
+                <img src="@("~/Product_images/"+pro.product_image)" asp-append-version=true class="img-fluid" alt="@pro.product_name">
+            </div>
+        <div class="col-6">
+                <h5 class="card-title">@pro.product_name</h5>
+                <p class="card-text"><strong>Price:</strong> $@pro.product_price</p>
+                <p class="card-text">@pro.product_description</p>
+                <p class="card-text"><strong>Category:</strong> @pro.Category.category_name</p>
+                <a class="btn btn-primary"><i class="fas fa-shopping-cart text-dark  mr-1"></i>Add To Cart</a>
+                <a class="btn btn-primary"><i class="fas fa-shopping-cart text-dark  mr-1"></i>Buy Now</a>
+        </div>
+    }
+    </div>
+
+</div>
+
+
+
+
+
