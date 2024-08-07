@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewData["Title"] = "Cartdeletepermission";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model ECommerceWebsite.Models.Cart;
+
+<div class="container-fluid full-height d-flex justify-content-start align-items-start">
+    <div class="row w-100">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row" style="margin-left:150px;">
+                    <div class="col-md-12 col-10 mx-auto">
+                        <h1 class="mt-3 mb-3 text-danger">
+                            ARE YOU SURE DELETE THIS Cart Details ? <h1 />
+                            <table class="table text-dark mb-5">
+
+                                <tbody>
+
+                                    <tr>
+                                        <th scope="col">Cart ID</th>
+                                        <td class="font-weight-100">@Model.cart_id</td>
+                                    </tr>
+
+                                    <tr>
+                                        <th scope="col">Product Name</th>
+                                        <td class="font-weight-100">@Model.products.product_name</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Customer Name</th>
+                                        <td class="font-weight-100">@Model.Customers.customer_name</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Cart Quantity</th>
+                                        <td class="font-weight-100">@Model.cart_quantity</td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="col">Cart Status</th>
+                                        <td class="font-weight-100">@Model.cart_status</td>
+
+                                    </tr>
+
+
+
+                                    <tr>
+                                        <td class="d-flex">
+
+                                            <a asp-action="FetchAllCart" asp-controller="Admin" asp-route-id="@Model.cart_id" class="btn btn-warning text-white" style="margin-right: 12px;">Back</a>
+                                            <a asp-action="deleteCart" asp-controller="Admin" asp-route-id="@Model.cart_id" class="btn btn-danger">Delete</a>
+
+
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

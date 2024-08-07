@@ -140,26 +140,30 @@ namespace ECommerceWebsite.Controllers
             List<Category> categories = _myContext.tbl_categories.ToList();
             ViewBag.cat = categories;
             List<Product> product = _myContext.tbl_product.ToList();
-            ViewBag.pro = product; 
+            ViewBag.pro = product;
+            ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
             return View();
         }
         public IActionResult productDetails(int id)
         {
             List<Category> categories = _myContext.tbl_categories.ToList();
             ViewBag.cat = categories;
+            ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
             var prod = _myContext.tbl_product.Where(x=>x.product_id==id).ToList();
             return View(prod);
         }
 
-        public IActionResult AddToCart(dynamic product_id, Cart cart)
+        public IActionResult AddToCart(int id, Cart cart)
+
         { string login = HttpContext.Session.GetString("Customersession");
            
             if (login!=null) {
-             
-                cart.prod_id = product_id;
+               
+                cart.prod_id = id;
                 cart.cust_id = int.Parse(login);
                 cart.cart_quantity = 1;
                 cart.cart_status = 0;
+            
                 _myContext.tbl_cart.Add(cart);
                 _myContext.SaveChanges();
                 TempData["message"] = "Product Successfully Added in Cart";

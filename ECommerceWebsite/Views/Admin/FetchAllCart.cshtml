@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewData["Title"] = "FetchAllCart";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model IEnumerable<ECommerceWebsite.Models.Cart>
+<div class="container-fluid full-height d-flex justify-content-start align-items-start">
+    <div class="row w-100">
+        <div class="col-md-12">
+            <div class="container">
+                <div class="row" style="margin-left:150px;">
+                    <div class="col-md-12 col-10 mx-auto">
+
+                        <table class="table text-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Cart Id</th>
+                                    <th scope="col">Product Name</th>
+                                    <th scope="col">Customer Name</th>
+                                    <th scope="col">Cart Quantity</th>
+                                    <th scope="col">Cart Status</th>
+                                    <th scope="col">Option</th>
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var Cat in Model)
+                                {
+                                    <tr>
+
+                                        <th scope="row">@Cat.cart_id</th>
+                                        <th scope="row">@Cat.products.product_name</th>
+                                        <th scope="row">@Cat.Customers.customer_name</th>
+                                        <th scope="row">@Cat.cart_quantity</th>
+                                        <th scope="row">@Cat.cart_status</th>
+                                           <td class="d-flex">
+                                            <a asp-action="Cartupdate" asp-controller="Admin" asp-route-id="@Cat.cart_id" class="btn btn-primary" style="margin-right: 12px;">update</a>
+                                            <a asp-action="Cartdeletepermission" asp-controller="Admin" asp-route-id="@Cat.cart_id" class="btn btn-danger">Delete</a>
+
+                                    </td>
+
+
+                                    </tr>
+                                }
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+

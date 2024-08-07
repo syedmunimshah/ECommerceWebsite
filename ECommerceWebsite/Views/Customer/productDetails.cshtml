@@ -19,7 +19,7 @@
                 <p class="card-text"><strong>Price:</strong> $@pro.product_price</p>
                 <p class="card-text">@pro.product_description</p>
                 <p class="card-text"><strong>Category:</strong> @pro.Category.category_name</p>
-                <a class="btn btn-primary"><i class="fas fa-shopping-cart text-dark  mr-1"></i>Add To Cart</a>
+                <a asp-action="AddToCart" asp-controller="Customer" asp-route-id="@pro.product_id" class="btn btn-primary"><i class="fas fa-shopping-cart text-dark  mr-1"></i>Add To Cart</a>
                 <a class="btn btn-primary"><i class="fas fa-shopping-cart text-dark  mr-1"></i>Buy Now</a>
         </div>
     }

@@ -259,6 +259,29 @@ namespace ECommerceWebsite.Controllers
 
             return RedirectToAction("FetchAllFeedback");
         }
+        public IActionResult FetchAllCart()
+        {
+
+            var cart = _myContext.tbl_cart.Include(x => x.products).Include(x => x.Customers).ToList();
+            return View(cart);
+
+        }
+        public IActionResult Cartdeletepermission(int id)
+        {
+            //var dele = _myContext.tbl_cart.FirstOrDefault(x => x.cart_id == id);
+            var dele = _myContext.tbl_cart.Include(x => x.products).Include(x => x.Customers).FirstOrDefault(x=>x.cart_id==id);
+            return View(dele);
+        }
+        public IActionResult deleteCart(int id)
+        {
+            var cart = _myContext.tbl_cart.Find(id);
+            _myContext.tbl_cart.Remove(cart);
+            _myContext.SaveChanges();
+
+            return RedirectToAction("FetchAllCart");
+        }
+
+
     }
-    
+
 }

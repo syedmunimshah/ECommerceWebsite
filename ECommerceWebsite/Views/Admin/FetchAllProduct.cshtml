@@ -33,9 +33,9 @@
                                             <img src="@("~/Product_images/"+Cat.product_image)" asp-append-version="true" alt="Product Image" style="height:50px;width:50px" />
                                         </th>
                                             <td class="d-flex">
-                                                <a asp-action="productupdate" asp-controller="Admin" asp-route-id="@Cat.product_id" class="btn btn-primary" style="margin-right: 12px;"> update</a>
-                                                <a asp-action="productDetails" asp-controller="Admin" asp-route-id="@Cat.product_id" class="btn btn-warning text-white" style="margin-right: 12px;"> Detail</a>
-                                                <a asp-action="productdeletepermission" asp-controller="Admin" asp-route-id="@Cat.product_id" class="btn btn-danger">Delete</a>
+                                                <a asp-action="cartupdate" asp-controller="Admin" asp-route-id="@Cat.product_id" class="btn btn-primary" style="margin-right: 12px;"> update</a>
+                                            <a asp-action="cartDetails" asp-controller="Admin" asp-route-id="@Cat.product_id" class="btn btn-warning text-white" style="margin-right: 12px;"> Detail</a>
+                                            <a asp-action="cartdeletepermission" asp-controller="Admin" asp-route-id="@Cat.product_id" class="btn btn-danger">Delete</a>
 
                                             </td>
 
