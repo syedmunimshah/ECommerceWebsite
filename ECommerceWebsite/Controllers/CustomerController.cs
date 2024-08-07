@@ -151,12 +151,12 @@ namespace ECommerceWebsite.Controllers
             return View(prod);
         }
 
-        public IActionResult AddToCart(int product_id, Cart cart)
+        public IActionResult AddToCart(dynamic product_id, Cart cart)
         { string login = HttpContext.Session.GetString("Customersession");
            
             if (login!=null) {
-                var prod_id = _myContext.tbl_product.FirstOrDefault(x => x.product_id == product_id);
-                cart.prod_id = prod_id;
+             
+                cart.prod_id = product_id;
                 cart.cust_id = int.Parse(login);
                 cart.cart_quantity = 1;
                 cart.cart_status = 0;
