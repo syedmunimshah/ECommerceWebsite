@@ -281,6 +281,23 @@ namespace ECommerceWebsite.Controllers
             return RedirectToAction("FetchAllCart");
         }
 
+        public IActionResult Cartupdate(int id)
+        {
+
+           
+            var cart = _myContext.tbl_cart.Find(id);
+          
+            return View(cart);
+        }
+
+        [HttpPost]
+        public IActionResult Cartupdate(int cart_status, Cart cart)
+        {
+            cart.cart_status = cart_status;
+            _myContext.tbl_cart.Update(cart);
+            _myContext.SaveChanges();
+            return RedirectToAction("FetchAllCart");
+        }
 
     }
 

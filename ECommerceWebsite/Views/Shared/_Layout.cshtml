@@ -81,11 +81,11 @@
                         <i class="fas fa-user text-primary"></i>
                         <span class="badge">0</span>
                     </a>
-                    <a href="" class="btn border">
+                   @*  <a href="" class="btn border">
                         <i class="fas fa-heart text-primary"></i>
                         <span class="badge">0</span>
-                    </a>
-                    <a href="" class="btn border">
+                    </a> *@
+                    <a asp-action="fetchcart" asp-controller="Customer" class="btn border">
                         <i class="fas fa-shopping-cart text-primary"></i>
                         <span class="badge">0</span>
                     </a>
@@ -106,9 +106,9 @@
                         </button>
                         <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                             <div class="navbar-nav mr-auto py-0">
-                                <a href="index.html" class="nav-item nav-link active">HOME</a>
+                                <a asp-action="Index" asp-controller="Customer" class="nav-item nav-link active">HOME</a>
                                 <a href="shop.html" class="nav-item nav-link">ABOUT US</a>
-                                <a href="detail.html" class="nav-item nav-link">PRODUCT</a>
+                                <a asp-action="ProductPage" asp-controller="Customer" class="nav-item nav-link">PRODUCT</a>
                                 <div class="nav-item dropdown">
                                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">CATEGORY</a>
                                     <div class="dropdown-menu rounded-0 m-0">

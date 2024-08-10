@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewData["Title"] = "Cartupdate";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+@model ECommerceWebsite.Models.Cart
+
+<div class="container-fluid full-height d-flex justify-content-start align-items-start">
+    <div class="row w-100">
+        <div class="col-md-12">
+            <div class="container">
+
+
+                <form method="post" asp-action="Cartupdate" asp-controller="Admin">
+                    <div class="row" style="margin-left:200px;">
+                        <div class="col-md-6 col-10">
+                            <div class="form-group pt-3">
+
+                                <input asp-for="cart_id" type="hidden">
+                                <input asp-for="prod_id" type="hidden">
+                                <input asp-for="cust_id" type="hidden">
+                                <input asp-for="cart_quantity" type="hidden">
+
+                                <label for="cart_status">Cart</label>
+                                <div class="form-group pt-3">
+                                    
+                                    <select asp-for="cart_status" class="form-select">
+                                        <option value="" disabled selected>--Select Cart--</option>
+                                        <option value="0">Pending</option>
+                                        <option value="1">Order</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="d-flex justify-content-center w-100 mt-2 mb-5">
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                      
+                       
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

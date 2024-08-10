@@ -1,5 +1,6 @@
 ﻿using ECommerceWebsite.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 namespace ECommerceWebsite.Controllers
@@ -137,12 +138,20 @@ namespace ECommerceWebsite.Controllers
         //fetchAllProduct
         public IActionResult ProductPage()
         {
-            List<Category> categories = _myContext.tbl_categories.ToList();
-            ViewBag.cat = categories;
-            List<Product> product = _myContext.tbl_product.ToList();
-            ViewBag.pro = product;
-            ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
-            return View();
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Customersession")))
+            {
+                return RedirectToAction("CustomerLogin");
+            }
+            else
+            {
+                List<Category> categories = _myContext.tbl_categories.ToList();
+                ViewBag.cat = categories;
+                List<Product> product = _myContext.tbl_product.ToList();
+                ViewBag.pro = product;
+                ViewBag.checkSession = HttpContext.Session.GetString("Customersession");
+                return View();
+            }
+          
         }
         public IActionResult productDetails(int id)
         {
@@ -171,6 +180,30 @@ namespace ECommerceWebsite.Controllers
             }
             else { return RedirectToAction("CustomerLogin"); }
            
+        }
+        public IActionResult fetchcart()
+        {
+            if (string.IsNullOrEmpty(HttpContext.Session.GetString("Customersession")))
+            {
+                return RedirectToAction("CustomerLogin");
+            }
+            else {
+                List<Category> categories = _myContext.tbl_categories.ToList();
+                ViewBag.cat = categories;
+                string userId = HttpContext.Session.GetString("Customersession");
+                var cart = _myContext.tbl_cart.Where(x => x.cust_id == int.Parse(userId)).Include(x => x.Customers).Include(x => x.products).ToList();
+                return View(cart); }
+        }
+        public IActionResult Removecart(int id)
+        {
+            List<Category> categories = _myContext.tbl_categories.ToList();
+            ViewBag.cat = categories;
+            var cart=_myContext.tbl_cart.Find(id);
+            _myContext.tbl_cart.Remove(cart);
+            _myContext.SaveChanges();
+            return RedirectToAction("fetchcart");
+          
+            
         }
     }
 }
